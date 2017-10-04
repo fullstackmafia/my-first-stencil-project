@@ -1,0 +1,11 @@
+collapsible-panel {
+    display: block;
+    border: black dashed 1px;
+  }
+  
+  #header {
+    background: blue;
+    color: white;
+    cursor: pointer;
+    padding: 2px;
+  }

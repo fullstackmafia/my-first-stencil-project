@@ -4,7 +4,33 @@
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
 
-import '@stencil/router';
+import { CollapsiblePanel as CollapsiblePanel } from './components/first-component';
+
+interface HTMLCollapsiblePanelElement extends CollapsiblePanel, HTMLElement {
+}
+declare var HTMLCollapsiblePanelElement: {
+  prototype: HTMLCollapsiblePanelElement;
+  new (): HTMLCollapsiblePanelElement;
+};
+declare global {
+  interface HTMLElementTagNameMap {
+      "collapsible-panel": HTMLCollapsiblePanelElement;
+  }
+  interface ElementTagNameMap {
+      "collapsible-panel": HTMLCollapsiblePanelElement;
+  }
+  namespace JSX {
+      interface IntrinsicElements {
+          "collapsible-panel": JSXElements.CollapsiblePanelAttributes;
+      }
+  }
+  namespace JSXElements {
+      export interface CollapsiblePanelAttributes extends HTMLAttributes {
+        
+          title?: any
+      }
+  }
+}
 
 import { MyName as MyName } from './components/my-name/my-name';
 
